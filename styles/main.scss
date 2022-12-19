@@ -16,3 +16,31 @@ body {
     rgba(163, 208, 219, 1) 100%
   );
 }
+
+nav {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  background-color: #aacf53;
+  color: #FFFFFF;
+  padding: 1.5em;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  margin: 0;
+  left: 0;
+
+
+}
+
+nav > span {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 70px;
+  color:black;
+
+}
+
+.nav-image {
+  -webkit-box-reflect: below 30px;
+
+}
