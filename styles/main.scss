@@ -1,8 +1,8 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items:flex-start;
   min-height: 100vh;
 
   background: rgb(163, 208, 219);
@@ -23,7 +23,7 @@ nav {
   width: 100%;
   background-color: #aacf53;
   color: #FFFFFF;
-  padding: 1.5em;
+  padding: 0.5em;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -37,10 +37,82 @@ nav > span {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 70px;
   color:black;
+margin-top: 0.5em
 
 }
 
 .nav-image {
-  -webkit-box-reflect: below 30px;
+  display: flex;
+  color: rgb(70, 115, 126);
+font-size: 20px;
+flex-direction: column;
+// margin-top: 0;
+// margin-bottom: 3em;
+align-items: flex-end;
+// padding-bottom: 2em
+}
+// .counter{
+//   color: red;
+// }
+
+.market {
+  -webkit-box-reflect: below 0px;
 
 }
+
+.arrow_right{
+  display: flex;
+  justify-content: flex-start;
+  font-size: xx-large;
+  color: rgb(70, 115, 126);
+  font-weight: bold;
+  margin-top: 1.23em;
+  position: relative;
+  animation: mymove 5s infinite;
+  animation-timing-function: linear;
+  animation-timing-function: ease;
+  animation-timing-function: ease-in;
+  animation-timing-function: ease-out;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 300px;}
+}
+
+.arrow_left{
+  display: flex;
+  justify-content: flex-start;
+  font-size: xx-large;
+  color: rgb(70, 115, 126);
+  font-weight: bold;
+  margin-top:1.3em;
+  position: relative;
+  animation: move 5s infinite;
+  animation-timing-function: linear;
+  animation-timing-function: ease;
+  animation-timing-function: ease-in;
+  animation-timing-function: ease-out;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes move {
+  from {right: 0px;}
+  to {right: 300px;}
+}
+
+#profile {
+  display: flex;
+  height: 100%;
+  width: 20%;
+  margin-top: 95px;
+  padding: 15px 0px;
+  justify-content: space-between;
+  align-items:  space-between;
+
+  flex-direction: row;
+margin-left: 2em;
+}
+
+
