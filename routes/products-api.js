@@ -22,7 +22,12 @@ ProductQueries.getProducts()
 //get /products/:id
 
 
-
+router.get('/:id', (req, res) => {
+  ProductQueries.getProductsbyId(req.params.id)
+  .then((product) => {
+    res.json(product)
+  });
+});
 
 
 

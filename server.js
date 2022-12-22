@@ -48,9 +48,10 @@ app.use('/users', usersRoutes);
 
 //import the routers
 const productApi = require('./routes/products-api.js');
-
+const orderApi = require('./routes/orders-api.js');
 //use the routers
 app.use('/products', productApi);
+app.use('/orders', productApi);
 
 app.get('/', (req, res) => {
   res.render('index');

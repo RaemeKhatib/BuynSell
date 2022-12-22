@@ -10,9 +10,9 @@ const getProducts = () => {
 };
 
 const getProductsbyId = (id) => {
-  return db.query('SELECT * FROM products WHERE id = $1;'[id])
-    .then(res => {
-      return res.rows[0];
+  return db.query('SELECT * FROM products WHERE id = $1;', [id])
+    .then(result => {
+      return result.rows[0];
     });
 
 
