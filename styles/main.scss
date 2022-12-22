@@ -115,4 +115,36 @@ align-items: flex-end;
 margin-left: 2em;
 }
 
+.Products {
+  display: flex;
+height:100%;
+width: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-between;
+margin-left: 15em;
+margin-right: 3em;
+align-items: stretch;
+align-content: stretch
+}
 
+.Product_info{
+
+  margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+}
+.status{
+  margin-top: 3em;
+}
+
+.cart_link {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5em;
+
+}

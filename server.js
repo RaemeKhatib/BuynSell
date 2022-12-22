@@ -44,6 +44,15 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+
+
+//import the routers
+const productApi = require('./routes/products-api.js');
+const orderApi = require('./routes/orders-api.js');
+//use the routers
+app.use('/products', productApi);
+app.use('/orders', productApi);
+
 app.get('/', (req, res) => {
   res.render('index');
 });
