@@ -120,12 +120,14 @@ margin-left: 2em;
 height:100%;
 width: 100%;
   border: 1px solid black;
+  // border-bottom: 2em;
   box-sizing: border-box;
   flex-direction: row;
   justify-content: space-between;
 margin-left: 15em;
 margin-right: 3em;
-align-items: stretch;
+margin-bottom: 1em;
+align-items: center;
 align-content: stretch
 }
 
