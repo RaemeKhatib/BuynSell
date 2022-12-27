@@ -13,7 +13,7 @@ const $results = $(`<article class="Products" id="Products">
 <header>
 
 
-<div class="Product_image"><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGHaecyUN3NcM7j2NKfIQiGaDXLxbuXkeMWvP8P3nQ5HadK2HL">
+<div class="Product_image"><img src =${data.image_url}>
 
 </div>
 
