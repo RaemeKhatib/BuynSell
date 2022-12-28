@@ -46,10 +46,8 @@ margin-top: 0.5em
   color: rgb(70, 115, 126);
 font-size: 20px;
 flex-direction: column;
-// margin-top: 0;
-// margin-bottom: 3em;
 align-items: flex-end;
-// padding-bottom: 2em
+
 }
 // .counter{
 //   color: red;
@@ -124,11 +122,12 @@ width: 100%;
   box-sizing: border-box;
   flex-direction: row;
   justify-content: space-between;
-margin-left: 15em;
-margin-right: 3em;
+margin-left: 1em;
+// margin-right: 10em;
 margin-bottom: 1em;
 align-items: center;
-align-content: stretch
+align-content: stretch;
+border-radius: 4px
 }
 
 .Product_info{
@@ -149,4 +148,10 @@ align-content: stretch
   justify-content: space-between;
   margin-top: 5em;
 
+}
+
+.Product_image{
+  display:flex;
+  height: 200px;
+  width: 300px
 }

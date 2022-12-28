@@ -22,7 +22,7 @@ VALUES (1, 'Xperia Pureness', 'Who doesnt want a see-through screen and the abil
 (7, 'Lego-Land', 'Who doesnt love the ability to move their features around at will, or throw things away that they dont use? Just be careful not to step on them', 'https://o.aolcdn.com/hss/storage/midas/f862b06508bd79e95054dcbad0199d10/204265461/2-phoneblocks.jpg', true),
 
 
-(8, 'Germs-Be-Gone', 'Who among us hasnt dropped their phone into something unsavory? This beauty comes with an automatic wash feature, great for germaphobes and clumbsies', 'https://o.aolcdn.com/hss/storage/midas/4d7603c559c28cee36f714710d288386/204265465/3+Kyocera+washable+smartphone.jpg', true),
+(8, 'Germs-Be-Gone', 'Who hasnt dropped their phone into something unsavory? This beauty comes with a wash feature, great for germaphobes and clumbsies', 'https://o.aolcdn.com/hss/storage/midas/4d7603c559c28cee36f714710d288386/204265465/3+Kyocera+washable+smartphone.jpg', true),
 
 (9, 'Germs-Be-Gone', 'This Rare, Limited Edition device answers calls for you, and can follow along side you , so that you can continue ignoring those calls and get stuff done', 'https://m.media-amazon.com/images/I/51C2daBuleS._AC_SX679_.jpg', true),
 

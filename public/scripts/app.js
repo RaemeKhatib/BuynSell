@@ -7,55 +7,51 @@
 $(document).ready(function() {
 
 
-const createProduct = function(data){
+  const createProduct = function(data) {
 
-const $results = $(`<article class="Products" id="Products">
+    const $results = $(`<article class="Products" id="Products">
 <header>
-
-
-<div class="Product_image"><img src =${data.image_url}>
-
-</div>
-
+ <div class="Product_image"><img src =${data.image_url}>
+ </div>
 </header>
-<section class="Product_info">
-<div class="Product_name"><b>${data.name}</b></div>
-<div class="description">${data.description}</div>
-<div class="status">Status: <b>Available</b></div>
-<div class="cart_link">
-<a href="orders"><i class="fa-solid fa-heart"></i></a>
-<div class="add_Cart">
-<button type="submit" class="cart-button">Add To Cart</button>
-</div>
-</section>
-<footer>
-</div>
-</footer>
+ <section class="Product_info">
+  <div class="Product_name"><b>${data.name}</b></div>
+  <div class="description">${data.description}</div>
+  <div class="status">Status: <b>Available</b></div>
+  <div class="cart_link">
+  <a href="orders"><i class="fa-solid fa-heart"></i></a>
+  <div class="add_Cart">
+  <button type="submit" class="cart-button">Add To Cart</button>
+  </div>
+ </section>
+ <footer>
+ </div>
+ </footer>
 </header>
 </article>`);
 
-return $results;
+    return $results;
 
 
-};
+  };
 
 
-const renderProducts =(data) => {
-$(".product-container").empty();
-//loop throuh the array
-for(const index of data){
-  const $products = createProduct(index)
-  $(".product-container").prepend($products);
-}
-};
+  const renderProducts = (data) => {
+    $(".product-container").empty();
+    //loop throuh the array
+    for (const index of data) {
+      const $products = createProduct(index);
+      $(".product-container").append($products);
+    }
+  };
 
-const loadProducts = () => {
-  $.ajax('/products', { method: 'GET' })
-    .then((product) => {
-      renderProducts(product);
-    });
-};
-loadProducts();
+  const loadProducts = () => {
+    $.ajax('/products', { method: 'GET' })
+      .then((product) => {
+        renderProducts(product);
+      });
+  };
+  loadProducts();
 
 
 
