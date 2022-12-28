@@ -18,7 +18,9 @@ CREATE TABLE products (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   name VARCHAR(255) NOT NULL,
   description TEXT,
+
 image_url VARCHAR(255) NOT NULL,
+price VARCHAR(255) NOT NULL,
 status BOOLEAN NOT NULL DEFAULT TRUE
 );
 
