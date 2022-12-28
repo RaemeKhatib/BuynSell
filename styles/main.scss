@@ -138,15 +138,21 @@ border-radius: 4px
     margin-inline-end: 0px;
 
 }
-.status{
-  margin-top: 3em;
+.Price_status{
+  display:flex;
+justify-content: space-between;
+  margin-top: 2em;
+}
+
+.price_amount{
+  color: red
 }
 
 .cart_link {
   display:flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 5em;
+  margin-top: 2em;
 
 }
 

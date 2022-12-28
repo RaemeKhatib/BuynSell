@@ -17,7 +17,10 @@ $(document).ready(function() {
  <section class="Product_info">
   <div class="Product_name"><b>${data.name}</b></div>
   <div class="description">${data.description}</div>
+  <div class="Price_status">
   <div class="status">Status: <b>Available</b></div>
+  <div class="Price"><b>Price:</b><b class="price_amount">${data.price}</b></div>
+  </div>
   <div class="cart_link">
   <a href="orders"><i class="fa-solid fa-heart"></i></a>
   <div class="add_Cart">
