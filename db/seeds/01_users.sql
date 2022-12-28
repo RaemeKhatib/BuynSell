@@ -9,7 +9,7 @@ VALUES (1, 'Xperia Pureness', 'Who doesnt want a see-through screen and the abil
 (2, 'Nokia Sneaker', 'This phone has the ability to turn into a camera that allows you to see around corners, perfect when looking to avoid your ex', 'https://scontent.fyxd2-1.fna.fbcdn.net/v/t1.18169-9/10401239_89903102396_6483758_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=Vnfm_iMME00AX-SmH3t&_nc_ht=scontent.fyxd2-1.fna&oh=00_AfD_Cb9GdEgnYJeq0Y-ZYBeMejyeLfLi4MOepCd_Sj5j_g&oe=63CACBE6', true),
 
 
-(1, 'Prison Break', 'This super sleak design is made to help you get ur phone into all sorts of places, including ones where its frowned upon.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGHaecyUN3NcM7j2NKfIQiGaDXLxbuXkeMWvP8P3nQ5HadK2HL', true)
+(1, 'Prison Break', 'This super sleak design is made to help you get ur phone into all sorts of places, including ones where its frowned upon.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGHaecyUN3NcM7j2NKfIQiGaDXLxbuXkeMWvP8P3nQ5HadK2HL', true),
 
 
 (4, 'InviPhone', 'This amazing design is for those who dont like finding their phone unless someone calls them', 'https://cdn.mos.cms.futurecdn.net/X8ajP3firD9QzBCipfEtPk.jpg', false),
