@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   const createProduct = function(data) {
 
-    const $results = $(`<article class="Products" id="Products">
+    const $results = $(`<article class="Products" id="Products-id-${data.id}">
 <header>
  <div class="Product_image"><img src =${data.image_url}>
  </div>
@@ -22,7 +22,7 @@ $(document).ready(function() {
   <div class="Price"><b>Price:</b><b class="price_amount">${data.price}</b></div>
   </div>
   <div class="cart_link">
-  <a href="orders"><i class="fa-solid fa-heart"></i></a>
+  <i onclick="increase(${data.id})" class="fa-solid fa-heart"></i>
   <div class="add_Cart">
   <button type="submit" class="cart-button">Add To Cart</button>
   </div>
@@ -57,9 +57,12 @@ $(document).ready(function() {
   };
   loadProducts();
 
-  
 
 
+let increase = (id) => {
+return id
+  console.log(id)
+};
 
 
 
