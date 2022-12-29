@@ -53,11 +53,11 @@ $(document).ready(function() {
       .then((product) => {
         renderProducts(product);
       });
+
   };
   loadProducts();
 
-
-
+  
 
 
 
