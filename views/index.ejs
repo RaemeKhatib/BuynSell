@@ -24,6 +24,7 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script src="/scripts/app.js"></script>
+  <script src="/scripts/search_form.js"></script>
 
 <!---App JS-->
 <!-- <script type="text/javascript" src="/scripts/productApp.js"></script> -->
@@ -57,34 +58,22 @@
       <h3>favourite list</h3>
     </div>
   </header>
-
+  <section class="searchForm-container">
+  <form class="Search_form">
+    <label>Filter by</label>
+    <br/>
+    <input name="Minimum_Price" placeholder="Minimum_Price"/>
+    <br/>
+   <input name="Maximum_Price"  placeholder="Maximum_Price"/>
+   <br/>
+   <button id="search" type="submit">SEARCH</button>
+   <a id="search-form__cancel" href="#">CANCEL</a>
+  </form>
+</section>
 
 
   <section class="product-container">
-    <!-- <article class="Products" id="Products">
-      <header>
 
-
-      <div class="Product_image"><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGHaecyUN3NcM7j2NKfIQiGaDXLxbuXkeMWvP8P3nQ5HadK2HL">
-
-    </div>
-
-    </header>
-    <section class="Product_info">
-      <div class="Product_name"><b>Prison Break</b></div>
-      <div class="description">This super sleak design is made to help you get ur phone into all sorts of places, including ones where its frowned upon...</div>
-      <div class="status">Status: <b>Available</b></div>
-      <div class="cart_link">
-      <a href="orders"><i class="fa-solid fa-heart"></i></a>
-      <div class="add_Cart">
-      <button type="submit" class="cart-button">Add To Cart</button>
-    </div>
-    </section>
-    <footer>
-    </div>
-    </footer>
-    </header>
-    </article> -->
   </section>
 </body>
 
