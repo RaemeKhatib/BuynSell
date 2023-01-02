@@ -6,7 +6,7 @@ const db = require('../connection');
  * @param {*} limit The number of results to return.
  * @return {Promise<[{}]>}  A promise to the products.
  */
-getAllProducts = function(options, limit=10){
+getAllProducts = async function(options, limit = 10){
 
 const queryParams = [];
 
@@ -24,7 +24,8 @@ queryParams.push(limit);
     LIMIT CAD${queryParams.length}
     `;
 
-    return db.query(queryString, queryParams).then((res) => res.rows);
+    const res = await db.query(queryString, queryParams);
+  return res.rows;
 };
 
 module.exports = { getAllProducts };

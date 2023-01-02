@@ -1,7 +1,9 @@
+let { getAllProducts } = require('../../db/queries/database')
+
 $(() => {
 
 $('#search').on('click', () => {
-  $.ajax('/database', { method: 'GET' })
+  $.ajax('/products', { method: 'GET' })
   .done((response) => {
     const searchList = getAllProducts(response);
 return searchList;
