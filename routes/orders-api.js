@@ -28,3 +28,5 @@ router.get('/:id', (req, res) => {
     res.json(order)
   });
 });
+
+module.exports = router;

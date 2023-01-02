@@ -32,6 +32,7 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -49,10 +50,11 @@ app.use('/users', usersRoutes);
 //import the routers
 const productApi = require('./routes/products-api.js');
 const orderApi = require('./routes/orders-api.js');
+const favApi = require('./routes/fav-api.js')
 //use the routers
 app.use('/products', productApi);
-app.use('/orders', productApi);
-
+app.use('/orders', orderApi);
+app.use('/favorites', favApi);
 app.get('/', (req, res) => {
   res.render('index');
 });
