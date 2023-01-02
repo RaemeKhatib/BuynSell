@@ -20,7 +20,7 @@ CREATE TABLE products (
   description TEXT,
 
 image_url VARCHAR(255) NOT NULL,
-price VARCHAR(255) NOT NULL,
+price INTEGER,
 status BOOLEAN NOT NULL DEFAULT TRUE
 );
 

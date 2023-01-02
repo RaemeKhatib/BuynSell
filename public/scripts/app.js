@@ -19,7 +19,7 @@ $(document).ready(function() {
   <div class="description">${data.description}</div>
   <div class="Price_status">
   <div class="status">Status: <b>Available</b></div>
-  <div class="Price"><b>Price:</b><b class="price_amount">${data.price}</b></div>
+  <div class="Price"><b>Price:</b><b class="price_amount">CAD${data.price}</b></div>
   </div>
   <div class="cart_link">
   <i onclick="increase(${data.id})" class="fa-solid fa-heart"></i>
