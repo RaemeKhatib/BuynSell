@@ -12,20 +12,19 @@ const queryParams = [];
 
 let queryString = `SELECT products.*
 FROM products`;
-if(options.Mininmum_price && options.Maximum_price){
-  queryParams.push(options.Minimum_price);
-  queryParams.push(options.Maximum_price);
-  queryString += `WHERE price >= CAD${queryParams.length - 1} AND
-  price <= CAD${queryParams.length}`;
-}
+// if(options.Mininmum_price && options.Maximum_price){
+//   queryParams.push(options.Minimum_price);
+//   queryParams.push(options.Maximum_price);
+//   queryString += `WHERE price >= ${queryParams.length - 1} AND
+//   price <= ${queryParams.length}`;
+// }
 
-queryParams.push(limit);
-  queryString += `ORDER BY price
-    LIMIT CAD${queryParams.length}
-    `;
+// queryParams.push(limit);
+//   queryString += `ORDER BY price
+//     LIMIT ${queryParams.length}
+//     `;
 
-    const res = await db.query(queryString, queryParams);
-  return res.rows;
+    return db.query(queryString, queryParams).then((res) => res.rows);
 };
 
 module.exports = { getAllProducts };

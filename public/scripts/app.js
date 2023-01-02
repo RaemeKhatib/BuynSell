@@ -59,13 +59,47 @@ $(document).ready(function() {
 
 
 
-let increase = (id) => {
-return id
-  console.log(id)
-};
+  let increase = (id) => {
+    return id;
+    console.log(id);
+  };
+
+  const filterProducts = (products, minimum, maximum) => {
+    return products.filter(product => product.price >= minimum && product.price <= maximum);
+
+  };
 
 
+  $('#search').on('click', () => {
+    let min = $('#Minimum_Price').val();
+    let max = $('#Maximum_Price').val();
+    console.log(min, max);
 
+    $.ajax({
+      method: 'GET',
+      url: '/products',
+      success: function(response) {
+        console.log(response);
+        //filters by users selected price range
+        let filteredProducts = filterProducts(response, min, max);
+        console.log(filteredProducts);
+        renderProducts(filteredProducts);
+
+      },
+      error: function(err) {
+        console.log(err);
+      }
+
+    });
+
+
+  });
+
+  $('#search-form__cancel').on('click', function() {
+// reload the page
+window.location.reload()
+
+  });
 
 
 

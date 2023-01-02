@@ -24,7 +24,7 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script src="/scripts/app.js"></script>
-  <script src="/scripts/search_form.js"></script>
+  
 
 <!---App JS-->
 <!-- <script type="text/javascript" src="/scripts/productApp.js"></script> -->
@@ -67,11 +67,11 @@
   <form class="Search_form">
     <label>Filter by</label>
     <br/>
-    <input name="Minimum_Price" placeholder="Minimum_Price"/>
+    <input id="Minimum_Price" name="Minimum_Price" placeholder="Minimum_Price"/>
     <br/>
-   <input name="Maximum_Price"  placeholder="Maximum_Price"/>
+   <input id="Maximum_Price" name="Maximum_Price"  placeholder="Maximum_Price"/>
    <br/>
-   <button id="search" type="submit">SEARCH</button>
+   <button id="search" type="button">SEARCH</button>
    <a id="search-form__cancel" href="#">CANCEL</a>
   </form>
 </section>

@@ -5,16 +5,12 @@ const ProductQueries = require('../db/queries/products');
 //get /products
 
 router.get('/', (req, res) => {
-ProductQueries.getProducts()
-.then((products) => {
-  res.json(products)
+ return ProductQueries.getProducts()
+  .then((products) => {
+  return res.json(products)
 });
 
 });
-
-
-
-
 
 
 
