@@ -49,9 +49,12 @@ app.use('/users', usersRoutes);
 //import the routers
 const productApi = require('./routes/products-api.js');
 const orderApi = require('./routes/orders-api.js');
+const favApi = require('./routes/fav-api.js');
+
 //use the routers
 app.use('/products', productApi);
-app.use('/orders', productApi);
+// app.use('/orders', orderApi); ----
+app.use('/favorites', favApi);
 
 app.get('/', (req, res) => {
   res.render('index');

@@ -22,9 +22,9 @@ $(document).ready(function() {
   <div class="Price"><b>Price:</b><b class="price_amount">CAD${data.price}</b></div>
   </div>
   <div class="cart_link">
-  <i onclick="increase(${data.id})" class="fa-solid fa-heart"></i>
+  <i onclick="${data.id}" class="fa-solid fa-heart"></i>
   <div class="add_Cart">
-  <button type="submit" class="cart-button">Add To Cart</button>
+  <button id="${data.id}" class="cart-button favorites">Add To Favorites</button>
   </div>
  </section>
  <footer>
@@ -52,17 +52,15 @@ $(document).ready(function() {
     $.ajax('/products', { method: 'GET' })
       .then((product) => {
         renderProducts(product);
+        console.log($('.favorites'))
+        $('.favorites').click(function() {
+          console.log('click')
+          })
       });
 
   };
   loadProducts();
 
-
-
-  let increase = (id) => {
-    return id;
-    console.log(id);
-  };
 
   const filterProducts = (products, minimum, maximum) => {
     return products.filter(product => product.price >= minimum && product.price <= maximum);
