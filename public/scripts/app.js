@@ -24,7 +24,7 @@ $(document).ready(function() {
   <div class="cart_link">
   <i onclick="${data.id}" class="fa-solid fa-heart"></i>
   <div class="add_Cart">
-  <button type="submit" class="cart-button">Add To Cart</button>
+  <button id="${data.id}" class="cart-button favorites">Add To Favorites</button>
   </div>
  </section>
  <footer>
@@ -52,14 +52,15 @@ $(document).ready(function() {
     $.ajax('/products', { method: 'GET' })
       .then((product) => {
         renderProducts(product);
+        console.log($('.favorites'))
+        $('.favorites').click(function() {
+          console.log('click')
+          })
       });
 
   };
   loadProducts();
 
-
-
-  
 
   const filterProducts = (products, minimum, maximum) => {
     return products.filter(product => product.price >= minimum && product.price <= maximum);
