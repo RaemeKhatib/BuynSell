@@ -37,10 +37,17 @@ product_image VARCHAR(255) NOT NULL
 
 );
 
+<<<<<<< HEAD
+CREATE TABLE favorites (
+  id SERIAL PRIMARY KEY NOT NULL,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+=======
 
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
 
+>>>>>>> 347bdae7837e9f60da1b9b05f492c83e5e7c152e
 );
