@@ -22,9 +22,9 @@ $(document).ready(function() {
   <div class="Price"><b>Price:</b><b class="price_amount">CAD${data.price}</b></div>
   </div>
   <div class="cart_link">
-  <i onclick="${data.id}" class="fa-solid fa-heart"></i>
+  <a href="message/${data.id}"><button class="message">Message Seller</button></a>
   <div class="add_Cart">
-  <button id="${data.id}" class="cart-button favorites">Add To Favorites</button>
+  <button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>
   </div>
  </section>
  <footer>
@@ -52,10 +52,8 @@ $(document).ready(function() {
     $.ajax('/products', { method: 'GET' })
       .then((product) => {
         renderProducts(product);
-        console.log($('.favorites'))
-        $('.favorites').click(function() {
-          console.log('click')
-          })
+        // console.log($('#favorites'))
+
       });
 
   };
@@ -94,11 +92,49 @@ $(document).ready(function() {
   });
 
   $('#search-form__cancel').on('click', function() {
-// reload the page
-window.location.reload()
+    // reload the page
+    window.location.reload();
 
   });
 
+
+
+  const favoriteProducts = (products) => {
+    // return products.filter(product => product.id === 1);
+return products;
+  };
+
+  // let basket = {};
+  $(".product-container").on('click', '.cart-button', function(e) {
+    console.log(e.target.className)
+    const className = e.target.className.split(' ')[1]
+    $.ajax({
+      method: 'POST',
+      url: '/favorites',
+      data:{favorite: {user: 1, product: className}},
+      success: function(response) {
+        console.log(response);
+        let favoritedProducts = favoriteProducts(response);
+$('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
+        // renderProducts(favoritedProducts);
+
+      },
+      error: function(err) {
+        console.log(err);
+      }
+
+    });
+
+  });
+
+  $('.favourite_counter').on('click', function(){
+    $.get('/favorites', function(data){
+      const favProducts = favoriteProducts(data)
+      renderProducts(favProducts);
+    }
+
+  )
+  })
 
 
 });
