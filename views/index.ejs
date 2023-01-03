@@ -20,14 +20,14 @@
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!--External JS-->
+  <!--External JS-->
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script src="/scripts/app.js"></script>
-  <script src="/scripts/search_form.js"></script>
+  <script src="/scripts/fav_list.js"></script>
 
-<!---App JS-->
-<!-- <script type="text/javascript" src="/scripts/productApp.js"></script> -->
+  <!---App JS-->
+  <!-- <script type="text/javascript" src="/scripts/productApp.js"></script> -->
 
 </head>
 
@@ -38,18 +38,21 @@
     <div class="arrow_left"><i class="fa-sharp fa-solid fa-arrow-left-long"></i></div>
     <div class="arrow_right"><i class="fa-sharp fa-solid fa-arrow-right-long"></i></div>
     <div class="right-nav">
-    <div id="carts">
-    <div class="favourite_image"><div class="favourite_counter">0<i id="heart" class="fa-solid fa-heart"></i></div>
-  </div>
-<div class="nav-image"><div class="counter">0<a href="orders"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></div>
-</div>
-</div>
-<div class="market"><span><a href="https://www.fontspace.com/category/fairy"><img
-        src="https://see.fontimg.com/api/renderfont4/9aP0/eyJyIjoiZnMiLCJoIjo4MSwidyI6MTI1MCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/bWFya2V0/fairies-gone-wild.png"
-        alt="Fairy fonts"></a></span>
+      <div id="carts">
+        <div class="favourite_image">
+          <div class="favourite_counter">0<i id="heart" class="fa-solid fa-heart"></i></div>
+
+        </div>
+        <div class="nav-image">
+          
+        </div>
       </div>
-  </div>
-  </div>
+      <div class="market"><span><a href="https://www.fontspace.com/category/fairy"><img
+              src="https://see.fontimg.com/api/renderfont4/9aP0/eyJyIjoiZnMiLCJoIjo4MSwidyI6MTI1MCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/bWFya2V0/fairies-gone-wild.png"
+              alt="Fairy fonts"></a></span>
+      </div>
+    </div>
+    </div>
   </nav>
   <header id="profile">
     <div class="home">
@@ -60,21 +63,21 @@
       <h3><i class="fa-solid fa-magnifying-glass"></i>Search</h3>
     </div>
     <div class="favourite">
-      <h3>favourite list</h3>
+      <h3>Favourites List</h3>
     </div>
   </header>
   <section class="searchForm-container">
-  <form class="Search_form">
-    <label>Filter by</label>
-    <br/>
-    <input name="Minimum_Price" placeholder="Minimum_Price"/>
-    <br/>
-   <input name="Maximum_Price"  placeholder="Maximum_Price"/>
-   <br/>
-   <button id="search" type="submit">SEARCH</button>
-   <a id="search-form__cancel" href="#">CANCEL</a>
-  </form>
-</section>
+    <form class="Search_form">
+      <label>Filter by</label>
+      <br />
+      <input id="Minimum_Price" name="Minimum_Price" placeholder="Minimum_Price" />
+      <br />
+      <input id="Maximum_Price" name="Maximum_Price" placeholder="Maximum_Price" />
+      <br />
+      <button id="search" type="button">SEARCH</button>
+      <a id="search-form__cancel" href="#">CANCEL</a>
+    </form>
+  </section>
 
 
   <section class="product-container">
