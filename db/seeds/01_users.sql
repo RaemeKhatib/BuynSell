@@ -1,7 +1,7 @@
 -- Users table seeds here (Example)
-INSERT INTO users (name, email, password) VALUES ('Alice', 'alice@wonderland.ca', '12345', false);
-INSERT INTO users (name, email, password) VALUES ('Kira','kira@myworld.ca', '12345', false );
-INSERT INTO users (name, email, password) VALUES ('Joy','joy@toworld.ca', '12345', true);
+INSERT INTO users (name, email, password, admin) VALUES ('Alice', 'alice@wonderland.ca', '12345', false);
+INSERT INTO users (name, email, password, admin) VALUES ('Kira','kira@myworld.ca', '12345', false );
+INSERT INTO users (name, email, password, admin) VALUES ('Joy','joy@toworld.ca', '12345', true);
 
 
 INSERT INTO products (user_id, name, description, image_url, price, status)
