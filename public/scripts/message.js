@@ -1,19 +1,5 @@
 $(document).ready(function() {
-  // const $signUpForm = $(
-  //   <form></form>
-  // )
-  // window.$signUpForm = $signUpForm;
-  // signUpForm.on('submit', function(event) {
-  //   event.preventDefault();
-
-  //   const data = $(this).serialize();
-  //   signUp(data)
-  //     .then(getMyDetails)
-  //     .then((json) => {
-  //       header.update(json.user);
-  //       views_manager.show('listings');
-  //     });
-  // });
+  
 
 const $createMessage = $(`
 <form class="message_form">
@@ -26,7 +12,7 @@ const $createMessage = $(`
       <button id="send" type="button">Send Message</button>
     </form>
 `)
- 
+
 window.$createMessage = $createMessage;
 $createMessage.on('submit', function(event) {
 
@@ -34,12 +20,12 @@ $createMessage.on('submit', function(event) {
 
 
 
-  
+
   // const renderMessage = (data) => {
   //   $(".cart_link").empty();
-    
+
   //     $(".message").append($message);
-    
+
   // };
 
   // const renderProducts = (data) => {
