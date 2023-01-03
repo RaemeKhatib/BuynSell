@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<div><%= message %></div>
+  <form class="message_form" method="POST" action="/message/<%= productId %>">
+    <label>Contact Seller</label>
+    <br />
+    <input id="message" name="message" placeholder="Your Name"/>
+    <br />
+    <input id="email" name="email" placeholder="Your Email"/>
+    <br />
+    <textarea rows="10" placeholder="Type message here"></textarea>
+    <br />
+    <button id="send" type="submit">Send Message</button>
+  </form>
+</body>
+</html>

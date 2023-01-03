@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   favoritesQueries.saveFavorite(req.body.favorite)
     .then((favorite) => {
-      console.log(favorite);
+      
       res.json(favorite);
     });
 

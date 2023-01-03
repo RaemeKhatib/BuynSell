@@ -22,7 +22,7 @@ $(document).ready(function() {
   <div class="Price"><b>Price:</b><b class="price_amount">CAD${data.price}</b></div>
   </div>
   <div class="cart_link">
-  <i onclick="${data.id}" class="fa-solid fa-heart"></i>
+  <a href="message/${data.id}"><button class="message">Message Seller</button></a>
   <div class="add_Cart">
   <button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>
   </div>
