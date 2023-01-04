@@ -17,7 +17,7 @@ console.log("+++++++", productId)
 
 
 
-router.post('/:productd', (req, res) => {
+router.post('/:productId', (req, res) => {
   const productId= req.params.productId
   // OrderQueries.getOrders()
   // .then((orders) => {
