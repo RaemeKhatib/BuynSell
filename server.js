@@ -30,8 +30,8 @@ app.use(express.static('public'));
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
+const usersApiRoutes = require('./routes/users-api');
 const usersRoutes = require('./routes/users');
-
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -39,6 +39,7 @@ const usersRoutes = require('./routes/users');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/users-api', usersApiRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -56,7 +57,8 @@ app.use('/products', productApi);
 app.use('/message', messageApi);
 app.use('/favorites', favApi);
 app.get('/', (req, res) => {
-  res.render('index');
+  // res.render('index',{isAdmin:false});
+  res.render('index',{isAdmin:true});
 });
 
 app.listen(PORT, () => {

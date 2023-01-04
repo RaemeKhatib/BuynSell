@@ -4,11 +4,10 @@
 
 
 
-$(document).ready(function() {
+$(document).ready( function() {
 
 
-  const createProduct = function(data) {
-
+  const createProduct = function(data, isAdmin) {
     const $results = $(`<article class="Products" id="Products-id-${data.id}">
 <header>
  <div class="Product_image"><img src =${data.image_url}>
@@ -18,13 +17,31 @@ $(document).ready(function() {
   <div class="Product_name"><b>${data.name}</b></div>
   <div class="description">${data.description}</div>
   <div class="Price_status">
-  <div class="status">Status: <b>Available</b></div>
+  <div class=${data.status === "Sold" ? "sold" : "available"}>Status: <b>${data.status}</b></div>
   <div class="Price"><b>Price:</b><b class="price_amount">CAD${data.price}</b></div>
   </div>
   <div class="cart_link">
+
   <a href="message/${data.id}"><button class="message">Message Seller</button></a>
+
   <div class="add_Cart">
   <button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>
+  ${isAdmin?
+    (data.status === "Sold" ?
+   ` <form method= "POST" action= "/products/${data.id}">
+   <input name="status" type="hidden" value="Available">
+    <button class="sold-button ${data.id}">Mark As Available</button>
+    </form>`: ` <form method= "POST" action= "/products/${data.id}">
+    <input name="status" type="hidden" value="Sold">
+     <button class="sold-button ${data.id}">Mark As Sold</button>
+     </form>` ): ""
+
+  }
+     ${isAdmin?
+`<form method= "POST" action= "/products/${data.id}/delete/">
+  <button class="delete-button ${data.id}" id="delete">Delete</button>
+  </form>`: ""
+  }
   </div>
  </section>
  <footer>
@@ -39,22 +56,26 @@ $(document).ready(function() {
   };
 
 
-  const renderProducts = (data) => {
+  const renderProducts = (data, isAdmin) => {
     $(".product-container").empty();
     //loop throuh the array
     for (const index of data) {
-      const $products = createProduct(index);
+      const $products = createProduct(index, isAdmin);
       $(".product-container").append($products);
     }
   };
 
   const loadProducts = () => {
-    $.ajax('/products', { method: 'GET' })
-      .then((product) => {
-        renderProducts(product);
-        // console.log($('#favorites'))
+    $.ajax('/users-api', { method: 'GET' }).then((result) => {
+return result.user
 
-      });
+    }).then((user)=> {
+     return $.ajax('/products', { method: 'GET' })
+     .then((product) => {
+      renderProducts(product, user.admin);
+
+    });
+    })
 
   };
   loadProducts();
@@ -113,7 +134,7 @@ return products;
       url: '/favorites',
       data:{favorite: {user: 1, product: className}},
       success: function(response) {
-       
+
         let favoritedProducts = favoriteProducts(response);
 $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
         // renderProducts(favoritedProducts);
