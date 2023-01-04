@@ -4,7 +4,7 @@
 
 
 
-$(document).ready(function() {
+$(document).ready( function() {
 
 
   const createProduct = function(data, isAdmin) {
@@ -17,14 +17,27 @@ $(document).ready(function() {
   <div class="Product_name"><b>${data.name}</b></div>
   <div class="description">${data.description}</div>
   <div class="Price_status">
-  <div class="status">Status: <b>Available</b></div>
+  <div class=${data.status === "Sold" ? "sold" : "available"}>Status: <b>${data.status}</b></div>
   <div class="Price"><b>Price:</b><b class="price_amount">CAD${data.price}</b></div>
   </div>
   <div class="cart_link">
+
   <a href="message/${data.id}"><button class="message">Message Seller</button></a>
+
   <div class="add_Cart">
   <button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>
   ${isAdmin?
+    (data.status === "Sold" ?
+   ` <form method= "POST" action= "/products/${data.id}">
+   <input name="status" type="hidden" value="Available">
+    <button class="sold-button ${data.id}">Mark As Available</button>
+    </form>`: ` <form method= "POST" action= "/products/${data.id}">
+    <input name="status" type="hidden" value="Sold">
+     <button class="sold-button ${data.id}">Mark As Sold</button>
+     </form>` ): ""
+
+  }
+     ${isAdmin?
 `<form method= "POST" action= "/products/${data.id}/delete/">
   <button class="delete-button ${data.id}" id="delete">Delete</button>
   </form>`: ""

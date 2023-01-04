@@ -1,7 +1,7 @@
 const db = require('../connection');
 
 const getProducts = () => {
-  return db.query('SELECT * FROM products;')
+  return db.query('SELECT * FROM products ORDER BY id ASC;')
     .then(res => {
       return res.rows;
     });
@@ -30,7 +30,7 @@ const addProduct = (product) => {
 
 
 const deleteProduct = (productId) => {
-  return db.query (`DELETE FROM products WHERE id = $1`, [productId])
+  return db.query (`DELETE FROM products WHERE id = $1;`, [productId])
   .then(result => {
     console.log(result)
     return result.rows[0];
@@ -38,4 +38,13 @@ const deleteProduct = (productId) => {
 }
 
 
-module.exports = { getProducts, getProductsbyId, addProduct, deleteProduct };
+const updateProduct = (productId, newProductDetails) => {
+  console.log(productId, newProductDetails)
+return db.query (`UPDATE products SET status = $2 WHERE id = $1 RETURNING *;`, [productId, newProductDetails.status])
+.then(result => {
+  console.log("this is the result:", result)
+  return result.rows[0];
+});
+}
+
+module.exports = { getProducts, getProductsbyId, addProduct, deleteProduct, updateProduct };

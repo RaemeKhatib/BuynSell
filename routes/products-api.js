@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     console.log(product)
     res.json(product)
   });
-  console.log("in the post", req.body)
+  console.log("in the other post", req.body)
 })
 
 
@@ -41,10 +41,20 @@ router.post('/:id/delete', (req, res) => {
     console.log(product)
     res.redirect('/')
   });
-  console.log("in the post", req.params)
+  console.log("in the delete", req.params)
 })
 
-
+router.post('/:id', (req, res) => {
+  const productDetails = {
+    status: req.body.status
+  }
+  ProductQueries.updateProduct(req.params.id, productDetails)
+  .then((product) => {
+    console.log(product)
+    res.redirect('/')
+  });
+  console.log("in the edit", req.params)
+})
 
 
 

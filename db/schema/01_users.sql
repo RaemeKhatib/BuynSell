@@ -23,7 +23,7 @@ CREATE TABLE products (
 
 image_url VARCHAR(255) NOT NULL,
 price INTEGER,
-status BOOLEAN NOT NULL DEFAULT TRUE
+status VARCHAR(255) NOT NULL
 );
 
 

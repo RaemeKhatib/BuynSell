@@ -24,7 +24,7 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script src="/scripts/app.js"></script>
-  
+
 
   <!---App JS-->
   <!-- <script type="text/javascript" src="/scripts/productApp.js"></script> -->
@@ -56,11 +56,12 @@
   </nav>
   <header id="profile">
     <div class="home">
-      <h3>🏠</h3>
+      <a href="/"><h3>🏠</h3></a>
     </div>
     <div class="search">
-
-      <h3><i class="fa-solid fa-magnifying-glass"></i>Search</h3>
+<% if(isAdmin) {%>
+     <a href="/users"><h3>Add Product</h3></a>
+<%}%>
     </div>
     <div class="favourite">
       <h3>Favourites List</h3>
