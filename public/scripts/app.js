@@ -7,8 +7,7 @@
 $(document).ready(function() {
 
 
-  const createProduct = function(data) {
-
+  const createProduct = function(data, isAdmin) {
     const $results = $(`<article class="Products" id="Products-id-${data.id}">
 <header>
  <div class="Product_image"><img src =${data.image_url}>
@@ -25,6 +24,11 @@ $(document).ready(function() {
   <a href="message/${data.id}"><button class="message">Message Seller</button></a>
   <div class="add_Cart">
   <button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>
+  ${isAdmin?
+`<form method= "POST" action= "/products/${data.id}/delete/">
+  <button class="delete-button ${data.id}" id="delete">Delete</button>
+  </form>`: ""
+  }
   </div>
  </section>
  <footer>
@@ -39,22 +43,26 @@ $(document).ready(function() {
   };
 
 
-  const renderProducts = (data) => {
+  const renderProducts = (data, isAdmin) => {
     $(".product-container").empty();
     //loop throuh the array
     for (const index of data) {
-      const $products = createProduct(index);
+      const $products = createProduct(index, isAdmin);
       $(".product-container").append($products);
     }
   };
 
   const loadProducts = () => {
-    $.ajax('/products', { method: 'GET' })
-      .then((product) => {
-        renderProducts(product);
-        // console.log($('#favorites'))
+    $.ajax('/users-api', { method: 'GET' }).then((result) => {
+return result.user
 
-      });
+    }).then((user)=> {
+     return $.ajax('/products', { method: 'GET' })
+     .then((product) => {
+      renderProducts(product, user.admin);
+
+    });
+    })
 
   };
   loadProducts();
@@ -113,7 +121,7 @@ return products;
       url: '/favorites',
       data:{favorite: {user: 1, product: className}},
       success: function(response) {
-       
+
         let favoritedProducts = favoriteProducts(response);
 $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
         // renderProducts(favoritedProducts);

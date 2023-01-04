@@ -28,4 +28,14 @@ const addProduct = (product) => {
 }
 
 
-module.exports = { getProducts, getProductsbyId, addProduct };
+
+const deleteProduct = (productId) => {
+  return db.query (`DELETE FROM products WHERE id = $1`, [productId])
+  .then(result => {
+    console.log(result)
+    return result.rows[0];
+  });
+}
+
+
+module.exports = { getProducts, getProductsbyId, addProduct, deleteProduct };
