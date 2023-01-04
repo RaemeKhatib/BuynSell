@@ -25,6 +25,15 @@ router.get('/:id', (req, res) => {
   });
 });
 
+router.post('/', (req, res) => {
+  ProductQueries.addProduct(req.body.product)
+  .then((product) => {
+    console.log(product)
+    res.json(product)
+  });
+  console.log("in the post", req.body)
+})
+
 
 
 

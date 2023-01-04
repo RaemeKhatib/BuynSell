@@ -5,20 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!--External CSS-->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <!--External JS-->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script src="/scripts/message.js"></script>
+
 </head>
 <body>
+
 
 <div><%= message %></div>
   <form class="message_form" method="POST" action="/message/<%= productId %>">
     <label>Contact Seller</label>
     <br />
-    <input id="message" name="message" placeholder="Your Name"/>
+    <div class="errorText"></div>
+      <div class="input_field">
+    <input id="message" name="Name" placeholder="Your Name"/>
     <br />
     <input id="email" name="email" placeholder="Your Email"/>
     <br />
-    <textarea rows="10" placeholder="Type message here"></textarea>
+
+    <textarea name="message" rows="10" placeholder="Type message here"></textarea>
+  </div>
+
     <br />
     <button id="send" type="submit">Send Message</button>
+    <a href="/"><button id="Home" type="submit">Back To Home</button></a>
   </form>
 </body>
 </html>

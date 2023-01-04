@@ -106,14 +106,14 @@ return products;
 
   // let basket = {};
   $(".product-container").on('click', '.cart-button', function(e) {
-    console.log(e.target.className)
+
     const className = e.target.className.split(' ')[1]
     $.ajax({
       method: 'POST',
       url: '/favorites',
       data:{favorite: {user: 1, product: className}},
       success: function(response) {
-        console.log(response);
+       
         let favoritedProducts = favoriteProducts(response);
 $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
         // renderProducts(favoritedProducts);
