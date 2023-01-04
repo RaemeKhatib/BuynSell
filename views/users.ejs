@@ -24,7 +24,27 @@
   <button id="fetch-users">Fetch Users via AJAX</button>
   <ul id="users"></ul>
 
-  <form action="/products" method="post" id="new-product"action></form>
+  <form id="new-product">
+
+    <label>New Product</label>
+    <br />
+    <div class="errorText"></div>
+      <div class="input_field">
+    <input id="productName" name="productName" placeholder="Product Name"/>
+    <br />
+    <textarea name="description" rows="10" placeholder="Description"></textarea>
+    <br />
+    <input id="picture" name="picture" placeholder="image url"/>
+    <br />
+    <input id="cost" name="cost" placeholder="Price"/>
+    <br />
+    <input id="status" name="status" placeholder="Availability"/>
+  </div>
+
+    <br />
+    <button id="send" type="submit">Add</button>
+    <button id="cancel" type="button">Cancel</button>
+  </form>
 </body>
 
 </html>
