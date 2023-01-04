@@ -1,43 +1,35 @@
 const express = require('express');
 const router  = express.Router();
-const OrderQueries = require('../db/queries/orders');
+// const OrderQueries = require('../db/queries/orders');
 
-//get /products
+//get /messages
 
 router.get('/:productId', (req, res) => {
   const productId= req.params.productId
 console.log("+++++++", productId)
-// OrderQueries.getOrders()
-// .then((orders) => {
-//   res.json(orders)
-// });
+
   res.render('message', { productId, message: "" });
 });
 
 
 
-
-router.post('/:productd', (req, res) => {
+//post /messages
+router.post('/:productid', (req, res) => {
   const productId= req.params.productId
-  // OrderQueries.getOrders()
-  // .then((orders) => {
-  //   res.json(orders)
-  // });
-  console.log("-------", productId, req.body)
-  res.render('message', { productId, message: "message sent to seller" });
+  const body = req.body
+
+
+  if (body.message){
+   return res.render('message', { productId, message: "Thanks you for contacting the seller. Your message has been sent." });
+  }
+  res.send(`<h1>Please update all fields<h1><a href ="/">Back to Home</a>`)
+// res.json({status:"ok"})
+
   });
 
 
 
 
-//get /products/:id
 
-
-// router.get('/:id', (req, res) => {
-//  OrderQueries.getOrdersbyId(req.params.id)
-//   .then((order) => {
-//     res.json(order)
-//   });
-// });
 
 module.exports = router;

@@ -1,38 +1,38 @@
-$(document).ready(function() {
-  
+// $(document).ready(function() {
 
-const $createMessage = $(`
-<form class="message_form">
-      <label>Contact Seller</label>
-      <br />
-      <input id="message" name="message" placeholder="Your Message"/>
-      <br />
-      <input id="email" name="email" placeholder="Your Email" />
-      <br />
-      <button id="send" type="button">Send Message</button>
-    </form>
-`)
-
-window.$createMessage = $createMessage;
-$createMessage.on('submit', function(event) {
-
-});
+// $(".message_form").on("submit", onSendMessage)
 
 
+// })
 
+// const onSendMessage = function(e) {
+// e.preventDefault()
+// console.log("submiting")
+// $('.errorText').slideUp(100).text('');
 
-  // const renderMessage = (data) => {
-  //   $(".cart_link").empty();
+//   if (!$(this).children().find('.input_field').val()) {
+//     $('.errorText').text('Field cannot be empty!').slideDown();
+//     return;
 
-  //     $(".message").append($message);
+//   }
+//   if ($(this).children().find('.input_field').val()) {
 
-  // };
+//     $('.errorText').text('Thanks you for contacting the seller. Your message has been sent.').slideDown();
+//     return;
 
-  // const renderProducts = (data) => {
-  //   $(".product-container").empty();
-  //   //loop throuh the array
-  //   for (const index of data) {
-  //     const $products = createProduct(index);
-  //     $(".product-container").append($products);
-  //   }
-  });
+//   }
+
+// const productId = 1
+// const data = {
+//   productId,
+//   message: "text message",
+//   name:"text name",
+//   email: "text email"
+// }
+
+// $.post(`/message/${productId}`, data)
+//   .then((res) => {
+//     console.log(res)
+//   })
+
+// }
