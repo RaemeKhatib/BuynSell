@@ -22,7 +22,7 @@ router.post('/:productid', (req, res) => {
   if (body.message){
    return res.render('message', { productId, message: "Thanks you for contacting the seller. Your message has been sent." });
   }
-  res.send(`<h1>Please update all fields<h1><a href ="/">Back to Home</a>`)
+  res.send(`<h2>Please update all fields<h2><a href ="/">Back to Home</a>`)
 // res.json({status:"ok"})
 
   });

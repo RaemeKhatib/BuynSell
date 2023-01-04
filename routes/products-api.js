@@ -35,6 +35,15 @@ router.post('/', (req, res) => {
 })
 
 
+router.post('/:id/delete', (req, res) => {
+  ProductQueries.deleteProduct(req.params.id)
+  .then((product) => {
+    console.log(product)
+    res.redirect('/')
+  });
+  console.log("in the post", req.params)
+})
+
 
 
 
