@@ -5,6 +5,7 @@ body {
   align-items:flex-start;
   min-height: 100vh;
 
+
   background: rgb(163, 208, 219);
   background: linear-gradient(
     227deg,
@@ -21,7 +22,10 @@ nav {
   display: flex;
   height: 120px;
   width: 100%;
-  background-color: #aacf53;
+  background-size:contain;
+  background-image: url("https://cdn.dribbble.com/users/303555/screenshots/10873981/media/b54dedec24e523d115637f4658a58fab.png?compress=1&resize=1000x750&vertical=top");
+  // background-color: rgb(153, 0, 255);
+  // opacity: 60%;
   color: #FFFFFF;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -88,47 +92,7 @@ align-items: flex-end;
 
 }
 
-.arrow_right{
-  display: flex;
-  justify-content: flex-start;
-  font-size: xx-large;
-  color: rgb(70, 115, 126);
-  font-weight: bold;
-  margin-top: 1.23em;
-  position: relative;
-  animation: mymove 5s infinite;
-  animation-timing-function: linear;
-  animation-timing-function: ease;
-  animation-timing-function: ease-in;
-  animation-timing-function: ease-out;
-  animation-timing-function: ease-in-out;
-}
 
-@keyframes mymove {
-  from {left: 0px;}
-  to {left: 300px;}
-}
-
-.arrow_left{
-  display: flex;
-  justify-content: flex-start;
-  font-size: xx-large;
-  color: rgb(70, 115, 126);
-  font-weight: bold;
-  margin-top:1.3em;
-  position: relative;
-  animation: move 5s infinite;
-  animation-timing-function: linear;
-  animation-timing-function: ease;
-  animation-timing-function: ease-in;
-  animation-timing-function: ease-out;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes move {
-  from {right: 0px;}
-  to {right: 300px;}
-}
 
 #profile {
   display: flex;
@@ -145,18 +109,17 @@ margin-left: 2em;
 
 .Products {
   display: flex;
-height:100%;
-width: 100%;
+// height:100%;
+// width: 100%;
   border: 1px solid black;
   margin-top: 2em;
-  box-sizing: border-box;
-  flex-direction: row;
+  // box-sizing: border-box;
+  // flex-direction: row;
   justify-content: space-between;
 margin-left: 2em;
-// margin-right: 10em;
+margin-right: 10em;
 margin-bottom: 1em;
 align-items: center;
-align-content: stretch;
 border-radius: 4px
 }
 
@@ -186,7 +149,7 @@ justify-content: space-between;
 
 }
 
-.pImage{
+.Product_image{
   display:flex;
   height: 200px;
   width: 300px
@@ -195,6 +158,10 @@ justify-content: space-between;
 
 .Search_form{
   margin-left: 2em;
+  font-size: medium;
+  font-weight: bold;
+  // position: fixed;
+
 }
 
 h1 {
