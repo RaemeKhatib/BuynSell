@@ -10,7 +10,7 @@ $(document).ready( function() {
   const createProduct = function(data, isAdmin, isFav=false) {
     const $results = $(`<article class="Products" id="Products-id-${data.id}">
 <header>
- <div class="Product_image"><img src =${data.image_url}>
+ <div class="Product_image"><img class="pImage" src =${data.image_url}>
  </div>
 </header>
  <section class="Product_info">
