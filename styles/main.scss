@@ -5,7 +5,6 @@ body {
   align-items:flex-start;
   min-height: 100vh;
 
-
   background: rgb(163, 208, 219);
   background: linear-gradient(
     227deg,
@@ -62,7 +61,9 @@ align-items: flex-end;
 
 
 .favourite_counter{
-  color: red;
+  color: rgb(207, 23, 23);
+  margin-left: 2px;
+
 }
 
 #heart{
@@ -109,18 +110,21 @@ margin-left: 2em;
 
 .Products {
   display: flex;
-// height:100%;
-// width: 100%;
+height:100%;
+width: 100%;
   border: 1px solid black;
   margin-top: 2em;
   // box-sizing: border-box;
   // flex-direction: row;
-  justify-content: space-between;
+  // justify-content: space-between;
+  padding-left: 20px;
 margin-left: 2em;
 margin-right: 10em;
 margin-bottom: 1em;
 align-items: center;
-border-radius: 4px
+border-radius: 4px;
+// overflow-wrap: break-word;
+
 }
 
 .Product_info{
@@ -138,9 +142,28 @@ justify-content: space-between;
 }
 
 .price_amount{
-  color: red
+  color: rgb(164, 19, 19)
 }
 
+.cart-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 100px;
+
+}
+
+.sold-button {
+  margin-left: 100px;
+  text-align: right;
+
+}
+.message {
+  margin-top: 5px;
+}
+
+.delete-button {
+  margin-left: 100px;
+}
 .cart_link {
   display:flex;
   flex-direction: row;
@@ -149,11 +172,25 @@ justify-content: space-between;
 
 }
 
-.Product_image{
-  display:flex;
-  height: 200px;
-  width: 300px
+.Product_name {
+  margin-bottom: 10px;
+  text-align: left;
 }
+
+.product-container {
+  width: 60%;
+  margin-left: 5em;
+  margin-right: 5em;
+
+}
+
+*.pImage{
+  display:flex;
+  height: 250px;
+  width: 300px;
+  margin: 10px;
+}
+
 
 
 .Search_form{
@@ -189,7 +226,7 @@ font-size:large;
 
 #picture {
   width: 500px;
-  margin-bottom: 0.3em;
+  margin: 0.3em;
 }
 
 #cost {
