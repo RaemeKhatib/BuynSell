@@ -56,9 +56,9 @@ const favApi = require('./routes/fav-api.js')
 app.use('/products', productApi);
 app.use('/message', messageApi);
 app.use('/favorites', favApi);
-app.get('/', (req, res) => {
-  // res.render('index',{isAdmin:false});
-  res.render('index',{isAdmin:true});
+app.get('/', (req, res) => { //THIS IS WHERE WE TURN OFF/ON ADMIN
+  res.render('index',{isAdmin:false});
+  // res.render('index',{isAdmin:true});
 });
 
 app.listen(PORT, () => {

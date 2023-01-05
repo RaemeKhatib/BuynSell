@@ -12,8 +12,8 @@ const userQueries = require('../db/queries/users');
 
 router.get('/', (req, res) => {
   // THIS IS WHERE WE CAN SWITCH BETWEEN USER AND ADMIN joy@toworld.ca is admin
-  userQueries.getUserByEmail("joy@toworld.ca")
-  // userQueries.getUserByEmail("kira@myworld.ca")
+  // userQueries.getUserByEmail("joy@toworld.ca")
+  userQueries.getUserByEmail("kira@myworld.ca")
     .then(user => {
       res.json({ user });
     })
