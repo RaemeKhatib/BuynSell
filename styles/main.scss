@@ -108,8 +108,8 @@ margin-left: 2em;
 
 .Products {
   display: flex;
-// height:100%;
-// width: 100%;
+height:100%;
+width: 100%;
   border: 1px solid black;
   margin-top: 2em;
   // box-sizing: border-box;
@@ -133,7 +133,14 @@ border-radius: 4px
     padding-left: 20px;
 
     overflow-wrap: break-word;
+    padding: 5em;
 
+}
+
+.Price {
+  display: flex;
+  justify-content: flex-end;
+  
 }
 .Price_status{
   display:flex;
@@ -142,9 +149,28 @@ justify-content: space-between;
 }
 
 .price_amount{
-  color: red
+  color: rgb(164, 19, 19)
 }
 
+.cart-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 100px;
+
+}
+
+.sold-button {
+  margin-left: 100px;
+  text-align: right;
+
+}
+.message {
+  margin-top: ;
+}
+
+.delete-button {
+  margin-left: 100px;
+}
 .cart_link {
   display:flex;
   flex-direction: row;
@@ -153,12 +179,30 @@ justify-content: space-between;
 
 }
 
-.pImage{
-  display:flex;
-  height: 200px;
-  width: 300px
+.Product_name {
+  margin-bottom: 10px;
+  text-align: left;
 }
 
+.product-container {
+  width: 70%;
+  margin:20px;
+}
+
+*.pImage{
+  display:flex;
+  height: 200px;
+  width: 250px;
+  margin: 10px;
+}
+
+.description {
+  width: 1000px;
+}
+
+.container {
+
+}
 
 .Search_form{
   margin-left: 2em;
@@ -193,7 +237,7 @@ font-size:large;
 
 #picture {
   width: 500px;
-  margin-bottom: 0.3em;
+  margin: 0.3em;
 }
 
 #cost {
