@@ -23,12 +23,13 @@ router.post('/:productid', (req, res) => {
   const body = req.body;
 
 
-  if (body.message) {
-    return client.messages
-      .create({ body: body.message, from: process.env.TWILIO_NUMBER, to: process.env.OTHER_NUMBER })
-      .then(message => console.log(message.sid))
+  if (body.message){
 
-      .then(() => res.render('message', { productId, message: "Thanks you for contacting the seller. Your message has been sent." }));
+   return client.messages
+  .create({ body:body.message, from: process.env.TWILIO_NUMBER, to: process.env.OTHER_NUMBER })
+  .then(message => console.log(message.sid))
+
+    .then(() => res.render('message', { productId, message: "Thank you for contacting the seller. Your message has been sent."}));
   }
   res.send(`<h2>Please update all fields<h2><a href ="/">Back to Home</a>`);
 

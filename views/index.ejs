@@ -34,58 +34,60 @@
 
 <body>
   <section class="container">
-  <nav>
-    <span>Buy-N-Sell</span>
+    <nav>
+      <span>Buy-N-Sell</span>
 
-    <div class="right-nav">
-      <div id="carts">
+      <div class="right-nav">
+        <div id="carts">
 
-        <div class="home">
-   <a href="/">🏠</a>
- </div>
-        <div class="favourite_image">
-          <div id="fav">Favorites</div>
-          <div class="favourite_counter">0<i id="heart" class="fa-solid fa-heart"></i></div>
+          <div class="home">
+            <a href="/">🏠</a>
+          </div>
+          <div class="favourite_image">
+            <div id="fav">Favorites</div>
+            <div class="favourite_counter">0<i id="heart" class="fa-solid fa-heart"></i></div>
 
+          </div>
+          <div class="nav-image">
+
+          </div>
         </div>
-        <div class="nav-image">
-
-        </div>
-      </div>
-      <div class="market"><span><img
+        <div class="market"><span><img
               src="https://see.fontimg.com/api/renderfont4/9aP0/eyJyIjoiZnMiLCJoIjo4MSwidyI6MTI1MCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/bWFya2V0/fairies-gone-wild.png"
               alt="Fairy fonts"></span>
+        </div>
       </div>
-    </div>
-    </div>
-  </nav>
-  <header id="profile">
+      </div>
+    </nav>
+    <header id="profile">
 
-    <div class="search">
-<% if(isAdmin) {%>
-     <a href="/users"><h3>Add Product</h3></a>
-<%}%>
-    </div>
+      <div class="search">
+        <% if(isAdmin) {%>
+          <a href="/users">
+            <h3>Add Product</h3>
+          </a>
+          <%}%>
+      </div>
 
-  </header>
-  <section class="searchForm-container">
-    <form class="Search_form">
-      <label>Filter by</label>
-      <br />
-      <input id="Minimum_Price" name="Minimum_Price" placeholder="Minimum_Price" />
-      <br />
-      <input id="Maximum_Price" name="Maximum_Price" placeholder="Maximum_Price" />
-      <br />
-      <button id="search" type="button">SEARCH</button>
-      <a id="search-form__cancel" href="#">CANCEL</a>
-    </form>
+    </header>
+    <section class="searchForm-container">
+      <form class="Search_form">
+        <label>Filter by</label>
+        <br />
+        <input id="Minimum_Price" name="Minimum_Price" placeholder="Minimum_Price" />
+        <br />
+        <input id="Maximum_Price" name="Maximum_Price" placeholder="Maximum_Price" />
+        <br />
+        <button id="search" type="button">SEARCH</button>
+        <a id="search-form__cancel" href="#">CANCEL</a>
+      </form>
+    </section>
+
+
+    <section class="product-container">
+
+    </section>
   </section>
-
-
-  <section class="product-container">
-
-  </section>
-</section>
 </body>
 
 </html>

@@ -32,17 +32,16 @@ const addProduct = (product) => {
 const deleteProduct = (productId) => {
   return db.query (`DELETE FROM products WHERE id = $1;`, [productId])
   .then(result => {
-    console.log(result)
     return result.rows[0];
   });
 }
 
 
 const updateProduct = (productId, newProductDetails) => {
-  console.log(productId, newProductDetails)
+
 return db.query (`UPDATE products SET status = $2 WHERE id = $1 RETURNING *;`, [productId, newProductDetails.status])
 .then(result => {
-  console.log("this is the result:", result)
+
   return result.rows[0];
 });
 }

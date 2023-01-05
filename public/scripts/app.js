@@ -4,10 +4,10 @@
 
 
 
-$(document).ready( function() {
+$(document).ready(function() {
 
 
-  const createProduct = function(data, isAdmin, isFav=false) {
+  const createProduct = function(data, isAdmin, isFav = false) {
     const $results = $(`<article class="Products" id="Products-id-${data.id}">
 <header>
  <div class="Product_image"><img class="pImage" src =${data.image_url}>
@@ -25,25 +25,25 @@ $(document).ready( function() {
   <a href="message/${data.id}"><button class="message">Message Seller</button></a>
 
   <div class="add_Cart">
-  ${!isFav?
-  `<button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>`: ""
-  }
-  ${isAdmin?
-    (data.status === "Sold" ?
-   ` <form method= "POST" action= "/products/${data.id}">
+  ${!isFav ?
+        `<button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>` : ""
+      }
+  ${isAdmin ?
+        (data.status === "Sold" ?
+          ` <form method= "POST" action= "/products/${data.id}">
    <input name="status" type="hidden" value="Available">
     <button class="sold-button ${data.id}">Mark As Available</button>
     </form>`: ` <form method= "POST" action= "/products/${data.id}">
     <input name="status" type="hidden" value="Sold">
      <button class="sold-button ${data.id}">Mark As Sold</button>
-     </form>` ): ""
+     </form>` ) : ""
 
-  }
-     ${isAdmin?
-`<form method= "POST" action= "/products/${data.id}/delete/">
+      }
+     ${isAdmin ?
+        `<form method= "POST" action= "/products/${data.id}/delete/">
   <button class="delete-button ${data.id}" id="delete">Delete</button>
   </form>`: ""
-  }
+      }
   </div>
  </section>
  <footer>
@@ -69,15 +69,15 @@ $(document).ready( function() {
 
   const loadProducts = () => {
     $.ajax('/users-api', { method: 'GET' }).then((result) => {
-return result.user
+      return result.user;
 
-    }).then((user)=> {
-     return $.ajax('/products', { method: 'GET' })
-     .then((product) => {
-      renderProducts(product, user.admin);
+    }).then((user) => {
+      return $.ajax('/products', { method: 'GET' })
+        .then((product) => {
+          renderProducts(product, user.admin);
 
+        });
     });
-    })
 
   };
   loadProducts();
@@ -92,7 +92,7 @@ return result.user
   $('#search').on('click', () => {
     let min = $('#Minimum_Price').val();
     let max = $('#Maximum_Price').val();
-    console.log(min, max);
+
 
     $.ajax({
       method: 'GET',
@@ -101,7 +101,6 @@ return result.user
         console.log(response);
         //filters by users selected price range
         let filteredProducts = filterProducts(response, min, max);
-        console.log(filteredProducts);
         renderProducts(filteredProducts);
 
       },
@@ -123,23 +122,23 @@ return result.user
 
 
   const favoriteProducts = (products) => {
-    // return products.filter(product => product.id === 1);
-return products;
+
+    return products;
   };
 
-  // let basket = {};
+
   $(".product-container").on('click', '.cart-button', function(e) {
 
-    const className = e.target.className.split(' ')[1]
+    const className = e.target.className.split(' ')[1];
     $.ajax({
       method: 'POST',
       url: '/favorites',
-      data:{favorite: {user: 1, product: className}},
+      data: { favorite: { user: 1, product: className } },
       success: function(response) {
 
         let favoritedProducts = favoriteProducts(response);
-$('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
-        // renderProducts(favoritedProducts);
+        $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length;
+     
 
       },
       error: function(err) {
@@ -160,21 +159,21 @@ $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
     }
   };
 
-  $('.favourite_counter').on('click', function(){
-    $.get('/favorites', function(data){
-      const favProducts = favoriteProducts(data)
+  $('.favourite_counter').on('click', function() {
+    $.get('/favorites', function(data) {
+      const favProducts = favoriteProducts(data);
       renderFavorites(favProducts);
     }
 
-  )
-  })
+    );
+  });
 
 
 
-  $.get('/favorites', function(data){
-    $('.favourite_counter').contents()[0].nodeValue = data.length
+  $.get('/favorites', function(data) {
+    $('.favourite_counter').contents()[0].nodeValue = data.length;
 
-  })
+  });
 
 
 });

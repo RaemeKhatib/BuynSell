@@ -1,19 +1,19 @@
 // Client facing scripts here
 $(() => {
-  $('#fetch-users').on('click', () => {
-    $.ajax({
-      method: 'GET',
-      url: '/api/users'
-    })
-      .done((response) => {
-        const $usersList = $('#users');
-        $usersList.empty();
+  // $('#fetch-users').on('click', () => {
+  //   $.ajax({
+  //     method: 'GET',
+  //     url: '/api/users'
+  //   })
+  //     .done((response) => {
+  //       const $usersList = $('#users');
+  //       $usersList.empty();
 
-        for (const user of response.users) {
-          $(`<li class="user">`).text(user.name).appendTo($usersList);
-        }
-      });
-  });
+  //       for (const user of response.users) {
+  //         $(`<li class="user">`).text(user.name).appendTo($usersList);
+  //       }
+  //     });
+  // });
 
 
 
@@ -25,12 +25,15 @@ $(() => {
     const description = e.target.description.value;
     const image_url = e.target.picture.value;
     const price = e.target.cost.value;
-console.log("hi")
+
     $.ajax({
       method: 'POST',
       url: '/products',
-      data:{product: {productName, description, image_url, price, status }},
-    })
+      data: { product: { productName, description, image_url, price, status } },
+    }).then((res) => {
+      console.log(res);
+      $('.success-text').text(res)
+    });
 
   });
 
