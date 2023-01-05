@@ -33,13 +33,18 @@
 
 
 <body>
+  <section class="container">
   <nav>
-    <span>BuynSell</span>
-    <div class="arrow_left"><i class="fa-sharp fa-solid fa-arrow-left-long"></i></div>
-    <div class="arrow_right"><i class="fa-sharp fa-solid fa-arrow-right-long"></i></div>
+    <span>Buy-N-Sell</span>
+
     <div class="right-nav">
       <div id="carts">
+
+        <div class="home">
+   <a href="/">🏠</a>
+ </div>
         <div class="favourite_image">
+          <div id="fav">Favorites</div>
           <div class="favourite_counter">0<i id="heart" class="fa-solid fa-heart"></i></div>
 
         </div>
@@ -47,25 +52,21 @@
 
         </div>
       </div>
-      <div class="market"><span><a href="https://www.fontspace.com/category/fairy"><img
+      <div class="market"><span><img
               src="https://see.fontimg.com/api/renderfont4/9aP0/eyJyIjoiZnMiLCJoIjo4MSwidyI6MTI1MCwiZnMiOjY1LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/bWFya2V0/fairies-gone-wild.png"
-              alt="Fairy fonts"></a></span>
+              alt="Fairy fonts"></span>
       </div>
     </div>
     </div>
   </nav>
   <header id="profile">
-    <div class="home">
-      <a href="/"><h3>🏠</h3></a>
-    </div>
+
     <div class="search">
 <% if(isAdmin) {%>
      <a href="/users"><h3>Add Product</h3></a>
 <%}%>
     </div>
-    <div class="favourite">
-      <h3>Favourites List</h3>
-    </div>
+
   </header>
   <section class="searchForm-container">
     <form class="Search_form">
@@ -84,6 +85,7 @@
   <section class="product-container">
 
   </section>
+</section>
 </body>
 
 </html>

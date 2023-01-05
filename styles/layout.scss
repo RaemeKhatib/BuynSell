@@ -5,4 +5,21 @@ html {
   margin: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  body{
+    font-weight: none;
+  }
 
+    }
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  
+  }
+
+  .container {
+    width: 120%;
+    float: right;
+    // margin: 150px 4rem 0px 50px;
+  }
+}
