@@ -24,12 +24,12 @@ router.post('/:productid', (req, res) => {
 
 
   if (body.message){
-    console.log("inside if")
+
    return client.messages
   .create({ body:body.message, from: process.env.TWILIO_NUMBER, to: process.env.OTHER_NUMBER })
   .then(message => console.log(message.sid))
 
-    .then(() => res.render('message', { productId, message: "Thanks you for contacting the seller. Your message has been sent."}));
+    .then(() => res.render('message', { productId, message: "Thank you for contacting the seller. Your message has been sent."}));
   }
   res.send(`<h2>Please update all fields<h2><a href ="/">Back to Home</a>`)
 // res.json({status:"ok"})
