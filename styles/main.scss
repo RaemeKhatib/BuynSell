@@ -130,7 +130,14 @@ border-radius: 4px
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     overflow-wrap: break-word;
+    padding: 5em;
 
+}
+
+.Price {
+  display: flex;
+  justify-content: flex-end;
+  
 }
 .Price_status{
   display:flex;
@@ -139,9 +146,28 @@ justify-content: space-between;
 }
 
 .price_amount{
-  color: red
+  color: rgb(164, 19, 19)
 }
 
+.cart-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 100px;
+
+}
+
+.sold-button {
+  margin-left: 100px;
+  text-align: right;
+
+}
+.message {
+  margin-top: ;
+}
+
+.delete-button {
+  margin-left: 100px;
+}
 .cart_link {
   display:flex;
   flex-direction: row;
@@ -150,6 +176,15 @@ justify-content: space-between;
 
 }
 
+.Product_name {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.product-container {
+  width: 70%;
+  margin:20px;
+}
 
 *.pImage{
   display:flex;
@@ -162,6 +197,9 @@ justify-content: space-between;
   width: 1000px;
 }
 
+.container {
+
+}
 
 .Search_form{
   margin-left: 2em;
