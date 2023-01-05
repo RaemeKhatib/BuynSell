@@ -109,8 +109,8 @@ margin-left: 2em;
 
 .Products {
   display: flex;
-// height:100%;
-// width: 100%;
+height:100%;
+width: 100%;
   border: 1px solid black;
   margin-top: 2em;
   // box-sizing: border-box;
@@ -150,10 +150,16 @@ justify-content: space-between;
 
 }
 
-.pImage{
+
+*.pImage{
   display:flex;
   height: 200px;
-  width: 250px
+  width: 250px;
+  margin: 10px;
+}
+
+.description {
+  width: 1000px;
 }
 
 
