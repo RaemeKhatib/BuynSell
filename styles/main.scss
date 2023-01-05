@@ -162,11 +162,11 @@ border-radius: 4px
 
 .Product_info{
 
-  margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-
+  // margin-block-start: 1em;
+  //   margin-block-end: 1em;
+  //   margin-inline-start: 0px;
+  //   margin-inline-end: 0px;
+    overflow-wrap:break-word
 }
 .Price_status{
   display:flex;
@@ -186,7 +186,7 @@ justify-content: space-between;
 
 }
 
-.Product_image{
+.pImage{
   display:flex;
   height: 200px;
   width: 300px
