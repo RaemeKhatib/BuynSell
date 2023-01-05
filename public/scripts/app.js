@@ -7,7 +7,7 @@
 $(document).ready( function() {
 
 
-  const createProduct = function(data, isAdmin) {
+  const createProduct = function(data, isAdmin, isFav=false) {
     const $results = $(`<article class="Products" id="Products-id-${data.id}">
 <header>
  <div class="Product_image"><img src =${data.image_url}>
@@ -25,7 +25,9 @@ $(document).ready( function() {
   <a href="message/${data.id}"><button class="message">Message Seller</button></a>
 
   <div class="add_Cart">
-  <button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>
+  ${!isFav?
+  `<button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>`: ""
+  }
   ${isAdmin?
     (data.status === "Sold" ?
    ` <form method= "POST" action= "/products/${data.id}">
@@ -148,13 +150,30 @@ $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length
 
   });
 
+
+  const renderFavorites = (data) => {
+    $(".product-container").empty();
+    //loop throuh the array
+    for (const index of data) {
+      const $products = createProduct(index, false, true);
+      $(".product-container").append($products);
+    }
+  };
+
   $('.favourite_counter').on('click', function(){
     $.get('/favorites', function(data){
       const favProducts = favoriteProducts(data)
-      renderProducts(favProducts);
+      renderFavorites(favProducts);
     }
 
   )
+  })
+
+
+
+  $.get('/favorites', function(data){
+    $('.favourite_counter').contents()[0].nodeValue = data.length
+
   })
 
 

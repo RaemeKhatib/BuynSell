@@ -55,9 +55,7 @@ flex-direction: column;
 align-items: flex-end;
 
 }
-.counter{
-  color: red;
-}
+
 
 .favourite_counter{
   color: red;
@@ -69,16 +67,19 @@ align-items: flex-end;
 
 #carts{
   display: flex;
+  flex-direction:row;
+  // position:relative; left:80px; top:2px;
   justify-content: flex-end;
   gap: 10px
 }
 
 .favourite_image {
   display: flex;
-  color: rgb(70, 115, 126);
+  color: rgb(85, 26, 139);
 font-size: 20px;
-flex-direction: column;
+flex-direction: row;
 align-items: flex-end;
+
 
 }
 

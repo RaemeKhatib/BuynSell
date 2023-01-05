@@ -39,7 +39,12 @@
     <div class="arrow_right"><i class="fa-sharp fa-solid fa-arrow-right-long"></i></div>
     <div class="right-nav">
       <div id="carts">
+
+        <div class="home">
+   <a href="/">🏠</a>
+ </div>
         <div class="favourite_image">
+          <div id="fav">Favorites</div>
           <div class="favourite_counter">0<i id="heart" class="fa-solid fa-heart"></i></div>
 
         </div>
@@ -55,17 +60,15 @@
     </div>
   </nav>
   <header id="profile">
-    <div class="home">
+    <!-- <div class="home">
       <a href="/"><h3>🏠</h3></a>
-    </div>
+    </div> -->
     <div class="search">
 <% if(isAdmin) {%>
      <a href="/users"><h3>Add Product</h3></a>
 <%}%>
     </div>
-    <div class="favourite">
-      <h3>Favourites List</h3>
-    </div>
+
   </header>
   <section class="searchForm-container">
     <form class="Search_form">
