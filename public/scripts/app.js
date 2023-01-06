@@ -24,10 +24,11 @@ $(document).ready(function() {
 
   <a href="message/${data.id}"><button class="message">Message Seller</button></a>
 
-  <div class="add_Cart">
+  <div class="three_buttons">
   ${!isFav ?
         `<button class="cart-button ${data.id}" id="favorites">Add To Favorites</button>` : ""
       }
+      <div class="two_buttons">
   ${isAdmin ?
         (data.status === "Sold" ?
           ` <form method= "POST" action= "/products/${data.id}">
@@ -44,6 +45,7 @@ $(document).ready(function() {
   <button class="delete-button ${data.id}" id="delete">Delete</button>
   </form>`: ""
       }
+      </div>
   </div>
  </section>
  <footer>
@@ -138,7 +140,7 @@ $(document).ready(function() {
 
         let favoritedProducts = favoriteProducts(response);
         $('.favourite_counter').contents()[0].nodeValue = favoritedProducts.length;
-     
+
 
       },
       error: function(err) {
